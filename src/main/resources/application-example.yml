@@ -1,0 +1,64 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: crypto-invest
+  profiles:
+    active: dev
+
+# 数据库配置
+datasource:
+  driver-class-name: com.mysql.cj.jdbc.Driver
+  url: jdbc:mysql://localhost:3306/crypto_invest?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
+  username: your_database_username
+  password: your_database_password
+  hikari:
+    minimum-idle: 5
+    maximum-pool-size: 15
+    idle-timeout: 30000
+    pool-name: CryptoHikariCP
+    max-lifetime: 1800000
+    connection-timeout: 30000
+
+# JPA配置
+jpa:
+  database-platform: org.hibernate.dialect.MySQLDialect
+  show-sql: true
+  hibernate:
+    ddl-auto: update
+  properties:
+    hibernate:
+      format_sql: true
+
+# Redis配置
+redis:
+  host: localhost
+  port: 6379
+  password: your_redis_password
+  database: 0
+  lettuce:
+    pool:
+      max-active: 8
+      max-idle: 8
+      min-idle: 0
+      max-wait: -1ms
+
+logging:
+  config: classpath:logback-spring.xml
+  file:
+    path: ./logs
+  level:
+    root: INFO
+    com.crypto.invest: DEBUG
+
+# 币安配置
+binance:
+  api:
+    key: your_binance_api_key
+    secret: your_binance_api_secret
+    useTestnet: true
+    # 现货API基础URL
+    baseUrl: https://testnet.binance.vision
+    # WebSocket基础URL
+    wsBaseUrl: wss://testnet.binance.vision/ws
