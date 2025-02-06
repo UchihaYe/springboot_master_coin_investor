@@ -1,4 +1,4 @@
-package com.crypto.invest.dto;
+package com.crypto.invest.model.dto;
 
 import lombok.Data;
 import java.math.BigDecimal;

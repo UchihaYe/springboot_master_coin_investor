@@ -2,8 +2,8 @@ package com.crypto.invest.controller;
 
 import com.crypto.invest.common.Result;
 import com.crypto.invest.service.BinanceService;
-import com.crypto.invest.dto.CoinPriceDTO;
-import com.crypto.invest.dto.AccountDTO;
+import com.crypto.invest.model.dto.CoinPriceDTO;
+import com.crypto.invest.model.dto.AccountDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

@@ -6,6 +6,18 @@ spring:
     name: crypto-invest
   profiles:
     active: dev
+  mail:
+    host: smtp.qq.com
+    port: 587
+    username: your-qq-email@qq.com  # 替换为你的QQ邮箱
+    password: your-smtp-password    # 替换为你的QQ邮箱SMTP授权码（不是QQ密码）
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
 
 # 数据库配置
 datasource:
